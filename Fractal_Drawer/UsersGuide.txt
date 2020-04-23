@@ -1,0 +1,8 @@
+Here is a list of attributes the user can easily change when they run the program. Having some knowledge of fractals will make this clearer but it isn't necessary.
+max_iterations = 100 - How many times the function is applied to each pixel, the more iterations the more correct the approximation should be come. Can/will reduce detail if too small or large.
+max_range = 50 - How large the function can be before it stops iterating, changes how the image looks is displayed.
+x_range = (-2, 2) - The x component of the region of the argand diagram / fractal being displayed. Large shows a wider area but lower detail
+y_range = (2, -2) - The y component of the region of the argand diagram / fractal being displayed. Large shows a wider area but lower detail
+width, height = 600, 600 - Resolution of the program. Its set small to be compatible with most computers, 1920*1080 at 125% zoom  
+power = 2 - The exponent applied to the previous iteration. For the Mandelbrot set the previous iteration is squared
+c_multiplier = 1 -  A scaling factor for the addition of c. Again don't worry if you don't understand.
