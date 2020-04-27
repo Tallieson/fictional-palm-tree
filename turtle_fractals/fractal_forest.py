@@ -5,6 +5,14 @@ import random
 def create_tree(branch_len):
     angle = random.randint(20, 30)
     shrink = random.uniform(0.6, 0.8)
+    size = int(branch_len / 10)
+    turtle.pensize(size)
+
+    if branch_len < 20:
+        turtle.color('green')
+        turtle.stamp()
+        turtle.color('brown')
+
     if branch_len > 10:
         turtle.forward(branch_len)
         turtle.left(angle)
@@ -21,7 +29,7 @@ for number in range(0, number_of_turtles):
     turtles.append([number])
 
 x = -400
-turtle.speed(100)
+turtle.speed(1000)
 turtle.left(90)
 turtle.color('brown')
 
