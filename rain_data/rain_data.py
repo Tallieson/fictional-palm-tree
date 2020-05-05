@@ -1,5 +1,8 @@
 # Take and decipher City of Portland Bureau of Enviromental Services
-# rain fall data. A lot to be done here - it's very ham fisted. I 
+# rain fall data. A simple command line interface that plots a few sets
+# of statistics.
+# 
+# A lot to be done here - it's very ham fisted. I 
 # ran into issues and went for the easy fix, and when I looked up; I
 # realized janky it is.. Might come back to it, it's at least functioning.
 # Less comments then I like - I should fix that too.
