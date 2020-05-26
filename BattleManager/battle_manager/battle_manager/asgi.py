@@ -1,5 +1,5 @@
 """
-ASGI config for myProjectSite project.
+ASGI config for battle_manager project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myProjectSite.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'battle_manager.settings')
 
 application = get_asgi_application()
