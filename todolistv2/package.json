@@ -1,0 +1,19 @@
+{
+  "name": "todo-list-browserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watchify src/index.js -o bundle.js --debug --verbose",
+    "watch-tests": "npx watchify test/test.js -o tests-bundle.js --debug --verbose",
+    "start": "npm run watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.0",
+    "watchify": "^3.11.1"
+  }
+}

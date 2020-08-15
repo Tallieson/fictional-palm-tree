@@ -1,0 +1,21 @@
+{
+  "name": "static-files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watchify static/main.js -o static/bundle.js --debug --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "browserify": "^16.5.2",
+    "http-hash-router": "^2.0.1",
+    "st": "^2.0.0",
+    "yoyo": "^1.1.1"
+  }
+}
