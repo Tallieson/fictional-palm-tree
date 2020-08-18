@@ -3,15 +3,42 @@
 // We call ".then" and ".catch" on the promise object where we can register success and error callbacks respectively.
 const yo = require('yo-yo')
 
+// Username prompt
+let nick = prompt("Please enter your name")
+// room variable
+let room = null
 
-function postMessage (text) {
+// add event listen to send message button
+document.getElementById("sendMessage")
+// create a callback function, to process data from form fields before calling postMessage function
+  .addEventListener("submit", (event) => {
+    event.preventDefault()
+    let text = document.getElementById("messageText").value
+    postMessage(text, nick)
+})
+
+function getRooms(){
+  fetch('/messages')
+    .then(response => response.json())
+    // Callback function when we receive the data
+    .then(messages =>{
+      yo.update(drop, renderRooms(messages))
+    }
+  )}
+
+function postMessage (text, nick) {
     console.log('posting message')
     fetch('/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: text, date: new Date() })
+      body: JSON.stringify({ 
+        room: room,
+        text: text, 
+        nick: nick, 
+        date: new Date()
+      })
     })
       .then(data => {
         console.log('Success:', data)
@@ -20,24 +47,70 @@ function postMessage (text) {
         console.error('Error:', error)
       })
   }
-  function getMessages () {
-    fetch('/messages')
-      .then(response => response.json())
-      .then(data =>{
-        //get data render to the DOM using yo.
-        // .forEach(todo => todolist.appendChild(todo)
-          return yo`<ul>
-            ${data.map(function (message){
-              return yo`<li class="todo-item">
-              <span>${message.text}</span>
-              </li>`
+function getMessages () {
+  console.log(room)
+  fetch('/messages')
+  .then(response => response.json())
+  // Callback function when we receive the data
+  .then(data =>{
+    console.log('fetching')
+    // filter returns true or false - the argument that filter callback takes in is an instance of data. callback returns True or False
+    data = data.filter((message) => message.room == room)
+    // updating the contents of the DOM element with the value returned by the 2nd argument
+    yo.update(el, render(data))
+  })
+}
+
+function render(messages){
+  return yo`
+    <div id=“messageContainers”>
+      <ul>
+        ${messages.map(function(message){
+          return yo`
+            <li>
+            <span class="message_sender">${message.nick}</span> : 
+            <span class="message_text">${message.text}</span> 
+            <span class="message_date">${message.date}</span>
+            </li>`
+        })}
+    </ul>
+    </div>
+  `
+}
+
+function renderRooms(messages){
+  let dropdown = yo`
+      <form id="selectRoom">
+        <label for="rooms">Choose a chat room:</label>
+          <select name="rooms" id="rooms">
+            ${messages.map(function(message){
+              return yo`
+                <option value="${message.room}">${message.room}</option>`
             })}
-            </ul>`
-      })
-  }
-  messageContainer.appendChild(getMessages())
-  // here is an example of how to send a POST request using the postMessage function:
-  // postMessage('hello')
-  
-  // here we call getMessages because the first thing we want to do when loading the page is get all previous messages.
-  getMessages()
+          </select>
+        <button type="submit">Send</button>
+      </form>`
+  // Select chat room
+  dropdown.addEventListener("submit", (event) => {
+  event.preventDefault()
+  room = document.getElementById("rooms").value
+  getMessages(room)
+})
+  return dropdown
+}
+
+getRooms()
+// inital call, passing empty array because we don't have data
+const drop = renderRooms([])
+// returned from asyncronous GetMessages function
+const el = render([])
+
+// append new instance of render function to the DOM
+document.body.appendChild(drop)
+document.body.appendChild(el)
+
+window.setInterval(getMessages, 1000)
+
+module.exports = {
+  postMessage, 
+  getMessages}

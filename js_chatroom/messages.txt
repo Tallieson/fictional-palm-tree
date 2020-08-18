@@ -1,4 +1,11 @@
-{"text":"hello", "nick":"dude", "date":"2020-19T04:18:49.841Z"}
-{"text":"hello", "nick":"dude", "date":"2020-19T04:18:49.841Z"}
-{"text":"hello", "nick":"dude", "date":"2020-19T04:18:49.841Z"}
-{"text":"hello", "nick":"dude", "date":"2020-19T04:18:49.841Z"}
+{"room":"memes", "text":"Hey u up", "nick":"Mike", "date":"2020-19T04:18:49.841Z"}
+{"room":"memes", "text":"I'm with my boyfriend", "nick":"Sally", "date":"2020-19T04:18:49.841Z"}
+{"room":"happy", "text":"ohmybad", "nick":"Mike", "date":"2020-19T04:18:49.841Z"}
+{"room":"happy", "text":"....", "nick":"Sally", "date":"2020-19T04:18:49.841Z"}
+{"room":"food", "text":"Netflix?","nick":"Mike","date":"2020-08-15T03:30:22.444Z"}
+{"room":"advice", "text":"Hey Guys whats up","nick":"George","date":"2020-08-15T04:11:40.198Z"}
+{"room":"memes","text":"Hey gang","nick":"fred","date":"2020-08-18T01:55:16.764Z"}
+{"room":"chattin","text":"Hey gang","nick":"fred","date":"2020-08-18T01:55:19.581Z"}
+{"room":"chattin","text":"What's going on?","nick":"fred","date":"2020-08-18T01:59:47.766Z"}
+{"room":"food","text":"","nick":"fred","date":"2020-08-18T02:03:28.739Z"}
+{"room":"food","text":"I love a good food!","nick":"dgar","date":"2020-08-18T03:15:38.045Z"}

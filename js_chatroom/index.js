@@ -36,7 +36,6 @@ function postMessage (req, res) {
   })
 
   req.on('end', function () {
-    console.log(data)
     fs.appendFile(MESSAGES_PATH, "\n" + data, (err) => {
         if (err){
             console.log(err)
@@ -49,11 +48,6 @@ function postMessage (req, res) {
         }
         
     })
-
-    // TODO: write code here to add the message to the messages file
-    // hint: use fs.appendFile
-    // make sure to separate each entry with a newline character
-
     // After writing to the file, we need to send up a response
   })
 }
