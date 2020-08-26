@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-let showFirstMoveSelector = false
-
 function Square(props) {
     return (
         <button className="square" onClick={props.onClick}>
@@ -93,11 +91,13 @@ class Game extends React.Component {
 
     restartGame() {
         this.setState({
-            history: [{
-                square: Array(9).fill(null)
-            }],
+            history: [
+                {
+                squares: Array(9).fill(null)
+            }
+        ],
             stepNumber: 0,
-            xIsNext: null,
+            xIsNext: true,
             FirstMoveSelected: false
         })
     }
