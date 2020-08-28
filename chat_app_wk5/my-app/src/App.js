@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* globals prompt fetch */
+import{ Chat } from './components'
+const yo = require('yo-yo')
+const io = require('socket.io-client')
+const socket = io()
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const nickname = prompt('Enter your nickname:')
+
+
+class App extends React.Component {}
+
+
+socket.on('chat message', msg => {
+  console.log('Got a message:', msg)
+  updateState('messages', state.messages.concat(msg))
+})
+
+const sendForm = document.getElementById('send-message')
+const messageTextField = document.getElementById('message-text')
+sendForm.onsubmit = evt => {
+  evt.preventDefault()
+  const message = { text: messageTextField.value, nick: nickname, room: state.room, date: new Date() }
+  socket.emit('chat message', message)
 }
 
-export default App;
+const state = {
+  room: '',
+  messages: []
+}
+
+function updateState (key, value) {
+  state[key] = value
+  yo.update(el, Chat(state.messages, state.room, updateState))
+}
+
+const el = Chat(state.messages, state.room, updateState)
+const chatContainer = document.getElementById('chat-container')
+chatContainer.appendChild(el)
+
+// Get initial list of messages
+fetch('/messages')
+  .then(response => response.json())
+  .then(data => {
+    console.log('fetched data from server')
+    updateState('messages', data)
+  })
+
