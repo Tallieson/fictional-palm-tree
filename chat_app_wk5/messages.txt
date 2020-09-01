@@ -15,3 +15,8 @@
 {"text":"haha","nick":"dude","room":"cool","date":"2020-05-22T02:28:24.289Z"}
 {"text":"hey what's up?","nick":"flymiamibro","room":"random","date":"2020-05-22T03:19:53.464Z"}
 {"text":"heyyy","nick":"dude","room":"chill","date":"2020-05-22T03:47:56.705Z"}
+{"text":"wasssuuppp","nick":"greg","room":"home","date":"2020-09-01T02:07:27.957Z"}
+{"text":"hello everyone","nick":"greg","room":"home","date":"2020-09-01T02:17:32.399Z"}
+{"text":"","nick":"Fred","room":"home","date":"2020-09-01T02:33:17.791Z"}
+{"text":"","nick":"Fred","room":"home","date":"2020-09-01T02:33:19.123Z"}
+{"text":"spoon","nick":"fred","room":"home","date":"2020-09-01T02:53:57.243Z"}
