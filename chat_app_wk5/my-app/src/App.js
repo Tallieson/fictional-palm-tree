@@ -5,23 +5,31 @@ import Chat from './components'
 const io = require('socket.io-client')
 const socket = io()
 const nickname = prompt('Enter your nickname:')
+const currentRoom = prompt('What room do you want to go to?')
+
+function UpdateRoom(currentRoom){
+  
+}
 
 function Message (props){
-  return( 
-  <li>
-    <span>{props.message.nick} : </span>{props.message.text}
-    </li>
-  )
+  return (<li class="message-item">
+      <span class="date">{(new Date(props.message.date)).toLocaleString()}</span>
+      <span class="nick">{props.message.nick}:</span>
+      <span class="text">{props.message.text}</span>
+  </li>)
 }
 
 function Chatter(props) {
-  console.log(props.messages)
+  let roomMessages = props.messages
+  console.log(roomMessages)
+  roomMessages = roomMessages.filter(message => message.room == currentRoom)
   return (
     <ul>
-      {props.messages.map((msg, index) => <Message key={index} message={msg}/>)}
+      {roomMessages.map((msg, index) => <Message key={index} message={msg}/>)}
     </ul>
   )
 }
+
 
 class MessageForm extends React.Component {
   constructor(props){
@@ -68,31 +76,21 @@ class MessageForm extends React.Component {
   }
 }
 
+
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state ={
     messages: [],
     nick: nickname,
-    room: "home"
+    room: currentRoom
   }
   //binding this function uses the state of this form, rather then the state of where it's called
   // otherwise it would only have access to the state in the constructor it is called from
   this.sendMessage = this.sendMessage.bind(this)
-
-  socket.on('chat message', msg => {
-    console.log('Got a message:', msg)
-    let finalMessages = this.state.messages
-    finalMessages.push(msg)
-    this.setState({
-      messages: finalMessages
-    })
-
-  })
-  }
+}
 
   sendMessage(finalMessage){
-    console.log(finalMessage)
     socket.emit('chat message', finalMessage)
   }
 
@@ -101,13 +99,19 @@ class App extends React.Component {
     fetch('/messages')
     .then(response => response.json())
     .then(messages => {
-      console.log(messages)
       this.setState({messages: messages})
+    })
+    socket.on('chat message', msg => {
+      console.log('Got a message:', msg)
+      let finalMessages = this.state.messages
+      finalMessages.push(msg)
+      this.setState({
+        messages: finalMessages
+      })
     })
   }
 
   render(){  
-    console.log(this.state)
     return(
     <div>
         <Chatter messages={this.state.messages}/>

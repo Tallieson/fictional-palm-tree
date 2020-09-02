@@ -20,3 +20,5 @@
 {"text":"","nick":"Fred","room":"home","date":"2020-09-01T02:33:17.791Z"}
 {"text":"","nick":"Fred","room":"home","date":"2020-09-01T02:33:19.123Z"}
 {"text":"spoon","nick":"fred","room":"home","date":"2020-09-01T02:53:57.243Z"}
+{"text":"Hey gang","nick":"greg","room":"home","date":"2020-09-01T03:04:31.584Z"}
+{"text":"why don't you work","nick":"Greg","room":"home","date":"2020-09-01T03:40:35.092Z"}
