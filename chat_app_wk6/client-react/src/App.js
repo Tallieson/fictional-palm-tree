@@ -3,7 +3,14 @@ import Chat from './Chat'
 import Rooms from './Rooms'
 import MessageForm from './MessageForm'
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 import io from 'socket.io-client'
+
 const socket = io()
 
 class App extends React.Component {
