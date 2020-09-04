@@ -1,0 +1,48 @@
+{"text":"hello","nick":"bob","date":"2020-05-19T00:37:39.089Z","room":"random"}
+{"text":"what's up","nick":"bob","date":"2020-05-19T00:53:35.562Z"}
+{"text":"haha","nick":"bob","room":"random","date":"2020-05-19T00:54:48.450Z"}
+{"text":"hey lets chill out in here","nick":"bob","room":"chill","date":"2020-05-19T01:23:41.827Z"}
+{"text":"hello","nick":"bob","room":"hackz","date":"2020-05-19T01:25:56.735Z"}
+{"text":"hello","nick":"bob","room":"general","date":"2020-05-19T01:28:17.881Z"}
+{"text":"hey there","nick":"bob","room":"general","date":"2020-05-19T01:28:24.168Z"}
+{"text":"heyyyy","nick":"dude","room":"stuff","date":"2020-05-19T01:47:05.104Z"}
+{"text":"woowww","nick":"dude","room":"programming","date":"2020-05-19T01:47:55.265Z"}
+{"text":"hey","nick":"dude","room":"general","date":"2020-05-19T01:48:15.067Z"}
+{"text":"hey hows it going?","nick":"neo","room":"hackz","date":"2020-05-19T01:49:55.100Z"}
+{"text":"what is this place?","nick":"neo","room":"matrix","date":"2020-05-19T01:50:16.898Z"}
+{"text":"haha","nick":"dude","room":"cool","date":"2020-05-19T04:18:20.469Z"}
+{"text":"hello","nick":"bro","room":"random","date":"2020-05-19T04:18:49.841Z"}
+{"text":"haha","nick":"dude","room":"cool","date":"2020-05-22T02:28:24.289Z"}
+{"text":"hey what's up?","nick":"flymiamibro","room":"random","date":"2020-05-22T03:19:53.464Z"}
+{"text":"heyyy","nick":"dude","room":"chill","date":"2020-05-22T03:47:56.705Z"}
+{"text":"yooo","room":"general","date":"2020-05-29T01:43:40.012Z"}
+{"text":"heyy","nick":"dude","room":"general","date":"2020-05-29T01:47:27.319Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-05-29T01:49:23.712Z"}
+{"text":"heyy","nick":"dude","room":"cool","date":"2020-05-29T02:18:43.601Z"}
+{"text":"hey there","nick":"bro","room":"chill","date":"2020-05-29T02:19:02.214Z"}
+{"text":"hi there","nick":"bro","room":"chill","date":"2020-05-29T02:19:07.360Z"}
+{"text":"going good bro","nick":"evan","room":"hackz","date":"2020-05-29T02:19:55.149Z"}
+{"text":"whats up?","nick":"evan","room":"awesome room","date":"2020-05-29T02:20:09.414Z"}
+{"text":"asdf","nick":"broo","room":"general","date":"2020-05-29T04:43:55.542Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-05-30T03:22:25.181Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T00:48:11.544Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T00:48:37.474Z"}
+{"text":"wow","nick":"dyde","room":"general","date":"2020-06-02T00:49:28.619Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T00:50:36.872Z"}
+{"text":"message...","nick":"bro","room":"general","date":"2020-06-02T00:55:51.120Z"}
+{"text":"hello","nick":"bro","room":"general","date":"2020-06-02T00:56:53.285Z"}
+{"text":"message...","nick":"dude","room":"general","date":"2020-06-02T02:02:43.236Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T02:04:11.159Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T02:04:17.930Z"}
+{"text":"hello","nick":"dude","room":"random","date":"2020-06-02T02:04:21.423Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T02:06:21.558Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T02:07:37.949Z"}
+{"text":"hello","nick":"dude","room":"general","date":"2020-06-02T02:12:21.239Z"}
+{"text":"hello","nick":"bob","room":"general","date":"2020-06-02T02:12:28.562Z"}
+{"text":"hello","nick":"bob","room":"chill","date":"2020-06-02T02:12:41.106Z"}
+{"text":"hello","nick":"bob","room":"cool room","date":"2020-06-02T02:19:08.652Z"}
+{"text":"asdf","nick":"dude","room":"programming","date":"2020-06-02T03:18:42.527Z"}
+{"text":"asdf","nick":"dude","room":"asdfsdaf","date":"2020-06-02T03:18:51.581Z"}
+{"text":"hello there!","nick":"dude","room":"general","date":"2020-09-02T01:24:21.389Z"}
+{"text":"hello there!","nick":"dude","room":"asdfsdafsdaf","date":"2020-09-02T01:24:34.641Z"}
+{"text":"dafsadf","nick":"dude","room":"lkjflaskfjsa","date":"2020-09-02T02:16:17.050Z"}

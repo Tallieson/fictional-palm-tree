@@ -1,0 +1,23 @@
+{"todos": [
+        {
+            "id": 1,
+            "text": "wash car",
+            "completed": true
+        },
+        {
+            "id": 2,
+            "text": "shoot for the moon",
+            "completed": false
+        },
+        {
+            "id": 3,
+            "text": "walk the dog",
+            "completed": true
+        },
+        {
+            "id": 4,
+            "text": "butter the cat",
+            "completed": false
+        }
+    ]
+}
