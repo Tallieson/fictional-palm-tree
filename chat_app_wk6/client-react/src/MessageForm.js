@@ -8,7 +8,7 @@ class MessageForm extends React.Component {
 
   handleSubmit (evt) {
     evt.preventDefault()
-    this.props.sendMessage(this.state.formValue)
+    this.props.sendMessage(this.state.formValue, this.props.room)
   }
 
   handleChange (event) {

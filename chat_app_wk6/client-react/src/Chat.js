@@ -1,4 +1,6 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import MessageForm from './MessageForm'
 
 function Message (props) {
   return (
@@ -11,11 +13,15 @@ function Message (props) {
 }
 
 export default function Chat (props) {
+  let { room } = useParams();
   return (
     <div id='chatroom'>
+      <h1>Welcome to {room} Chat</h1>
       <ul id='messages'>
-        {props.messages.filter(msg => msg.room === props.room).map((msg, i) => <Message message={msg} key={i} />)}
+        {props.messages.filter(msg => msg.room === room).map((msg, i) => <Message message={msg} key={i} />)}
       </ul>
+
+      <MessageForm room={room} sendMessage={props.sendMessage}/>
     </div>
   )
 }

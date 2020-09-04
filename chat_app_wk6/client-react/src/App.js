@@ -2,6 +2,7 @@
 import Chat from './Chat'
 import Rooms from './Rooms'
 import MessageForm from './MessageForm'
+import LoginForm from './LoginForm'
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -16,7 +17,7 @@ const socket = io()
 class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { messages: [], room: 'general' }
+    this.state = { messages: [], nick: null }
   }
 
   componentDidMount () {
@@ -34,18 +35,17 @@ class App extends React.Component {
       })
   }
 
-  sendMessage (text) {
-    const message = { text: text, nick: this.props.nick, room: this.state.room, date: new Date() }
+  loginFunc(nick, password) {
+    this.setState({nick: nick})
+  }
+
+  sendMessage (text, messageRoom) {
+    const message = { text: text, nick: this.state.nick, room: messageRoom, date: new Date() }
     socket.emit('chat message', message)
   }
 
   handleAddRoom () {
     const room = prompt('Enter a room name')
-    this.setState({ room: room })
-  }
-
-  handleChangeRoom (evt) {
-    const room = evt.target.value
     this.setState({ room: room })
   }
 
@@ -58,16 +58,51 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
-        <Rooms
-          room={this.state.room}
-          rooms={this.getRooms()}
-          handleAddRoom={this.handleAddRoom.bind(this)}
-          handleChangeRoom={this.handleChangeRoom.bind(this)}
-        />
-        <MessageForm sendMessage={this.sendMessage.bind(this)} />
-        <Chat messages={this.state.messages} room={this.state.room} />
-      </div>
+      <Router>
+        <div>
+        <h2>Links</h2>
+        <ul>
+          <li>
+            <Link to="/signup">signup</Link>
+          </li>
+          <li>
+            <Link to="/logout">Log out</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/rooms/general">Chat</Link>
+          </li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route path="/signup">
+          
+          </Route>
+
+          <Route path="/logout" >
+
+          </Route>
+
+          <Route path="/login">
+            <LoginForm loginFunc={this.loginFunc.bind(this)}/>
+          </Route>
+          <Route path="/rooms/:room">
+            <Chat sendMessage={this.sendMessage.bind(this)} messages={this.state.messages}/>
+          </Route>
+          <Route path="/">
+            <Rooms
+            rooms={this.getRooms()}
+            handleAddRoom={this.handleAddRoom.bind(this)}
+            />
+          </Route>
+        </Switch>
+
+    </div>
+    </Router>
     )
   }
 }
